@@ -33,7 +33,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 # Simple Linear Regression with OLS Using Scikit-Learn
 ######################################################
 
-df = pd.read_csv("3_machine_learning/machine_learning/datasets/advertising.csv")
+df = pd.read_csv("datasets/advertising.csv")
 df.shape
 
 X = df[["TV"]]
@@ -110,7 +110,7 @@ reg_model.score(X, y)
 # Multiple Linear Regression
 ######################################################
 
-df = pd.read_csv("3_machine_learning/machine_learning/datasets/advertising.csv")
+df = pd.read_csv("datasets/advertising.csv")
 
 X = df.drop('sales', axis=1)
 
@@ -251,7 +251,7 @@ def train(Y, initial_b, initial_w, X, learning_rate, num_iters):
     print("After {0} iterations b = {1}, w = {2}, mse = {3}".format(num_iters, b, w, cost_function(Y, b, w, X)))
     return cost_history, b, w
 
-df = pd.read_csv("3_machine_learning/machine_learning/datasets/advertising.csv")
+df = pd.read_csv("datasets/advertising.csv")
 
 X = df["radio"]
 Y = df["sales"]
@@ -270,5 +270,4 @@ bir diğeri de ayarlanması gereken hiperparametreler vardır (fark burada)
 """
 
 cost_history, b, w = train(Y, initial_b, initial_w, X, learning_rate, num_iters)
-
 
